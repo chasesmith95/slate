@@ -328,7 +328,6 @@ the OPEN State, and is signed by the address that performed the operation.
 It is an off-chain representation of the transaction and is used by the application
 for verification.
 
-#### Attributes
 
 Attribute |  Description
 --------- |  -----------
