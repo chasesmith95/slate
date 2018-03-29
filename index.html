@@ -222,44 +222,115 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="getting-started">Getting Started</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#getting-a-wallet" class="toc-h2 toc-link" data-title="getting-a-wallet">Getting a Wallet</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#setting-up-a-developer-account" class="toc-h2 toc-link" data-title="setting-up-a-developer-account">Setting up a Developer Account</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#creating-a-scaffold" class="toc-h2 toc-link" data-title="creating-a-scaffold">Creating a Scaffold</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#scaffolds" class="toc-h1 toc-link" data-title="scaffolds">Scaffolds</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#deploy-a-scaffold" class="toc-h2 toc-link" data-title="deploy-a-scaffold">Deploy a Scaffold</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-scaffold" class="toc-h2 toc-link" data-title="get-a-specific-scaffold">Get a Specific Scaffold</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-scaffolds" class="toc-h2 toc-link" data-title="get-all-scaffolds">Get all Scaffolds</a>
+                  </li>
+                  <li>
+                    <a href="#storing-scaffold-data-off-chain" class="toc-h2 toc-link" data-title="storing-scaffold-data-off-chain">Storing Scaffold Data Off-Chain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#connecting-to-an-application" class="toc-h1 toc-link" data-title="connecting-to-an-application">Connecting to an Application</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#server-side" class="toc-h2 toc-link" data-title="server-side">Server Side</a>
+                  </li>
+                  <li>
+                    <a href="#client-side" class="toc-h2 toc-link" data-title="client-side">Client Side</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#open-library" class="toc-h1 toc-link" data-title="open-library">OPEN Library</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#packages" class="toc-h2 toc-link" data-title="packages">Packages</a>
+                  </li>
+                  <li>
+                    <a href="#products" class="toc-h2 toc-link" data-title="products">Products</a>
+                  </li>
+                  <li>
+                    <a href="#transactions" class="toc-h2 toc-link" data-title="transactions">Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#receipts" class="toc-h2 toc-link" data-title="receipts">Receipts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-documentation-currently-in-development" class="toc-h1 toc-link" data-title="api-documentation-currently-in-development">API Documentation Currently in Development</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>This API documentation is meant to give OPEN Developers an endpoint how to develop and interact with the OPEN Platform.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>These documents specify how to get started with the OPEN Platform, how to create a Scaffold and pricing scheme, and how to integrating this pricing scheme into another application environment.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>The point of the OPEN Platform is to make the transition as seamless as possible for the developer which means that many common pricing trends (product id, receipt) will persist.</p>
+<h1 id='getting-started'>Getting Started</h1><h2 id='getting-a-wallet'>Getting a Wallet</h2>
+<p>An important part of accepting cryptocurrency payments is to get a Wallet and address.
+If you already have this feel free to skip this section.
+While the OPEN Wallet is still in development, it is recommended that you use a hardware solution like Trezor or Ledger Nano.
+In the context of this, it is possible to simply go through MetaMask.</p>
+<h2 id='setting-up-a-developer-account'>Setting up a Developer Account</h2>
+<p>Before interacting with the OPEN Platform, it is necessary to create an
+account on the OPEN Platform initially.
+Once you login in you can create a create a Developer API Key through which it is
+possible to interact with the platform.</p>
+
+<p>The Developer API Key looks like the following:</p>
+
+<p><code>Developer API Key: OPEN_DEV_PUB_KEY</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'/api/gen-developer-api-key'</span>
+</code></pre><h2 id='creating-a-scaffold'>Creating a Scaffold</h2>
+<p>Once the Developer Account is created, Scaffolds and pricing schemes can be developed and deployed using the OPEN Scaffold Dashboard. This can be seen in more depth in the OPEN Demo.
+Installing Dependencies
+The OPEN API relies on several software dependencies, to ensure that the process is as easy and painless as possible.</p>
 <h1 id='authentication'>Authentication</h1>
+<p>Specific calls to the Scaffold require authentication from the developer.
+This is why there exists two OPEN API keys
+* Public Developer API Key (for testing purposes)
+* Private Developer API Key (for authentication and security purposes on deployment)</p>
+
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -268,174 +339,325 @@
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'OPEN_DEV_PUB_KEY'</span><span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"open_dev_id: OPEN_DEV_PUB_KEY"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>OPEN_DEV_PUB_KEY</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>OPEN expects for the API key to be included in all API requests to the server in a
+header that looks like the following:</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>open_dev_id : OPEN_DEV_PUB_KEY</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>OPEN_DEV_PUB_KEY</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='scaffolds'>Scaffolds</h1>
+<blockquote>
+<p>A Scaffold can be represented through the following JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="err">USD</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currencyConversionValue"</span><span class="p">,</span><span class="w"> </span><span class="err">VALUE</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</span></code></pre>
+<p>The primary means of interacting with the Scaffolds is through
+the OPEN Developer Dashboard, it is also possible to make changes
+using the OPEN API.</p>
+<h2 id='deploy-a-scaffold'>Deploy a Scaffold</h2>
+<p>This provides the endpoint to creating and deploying a Scaffold.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST  http://openapp.io/api/deploy-scaffold/:scaffold_data</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>developerAddress</td>
+<td>The Developer&#39;s Wallet Address.</td>
+</tr>
+<tr>
+<td>scaffoldDescription</td>
+<td>A brief description of the Scaffold&#39;s function.</td>
+</tr>
+<tr>
+<td>fiatAmount</td>
+<td>Currency value of the item.</td>
+</tr>
+<tr>
+<td>conversionCurrency</td>
+<td>The currency being converted (e.g. USD)</td>
+</tr>
+<tr>
+<td>currencyConversionValue</td>
+<td>The value in ETH of the desired currency.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-scaffold'>Get a Specific Scaffold</h2>
+<blockquote>
+<p>An example of this call would be:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://openapp.io/api/scaffold/OPEN_DEV_PUB_KEY/0x0
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This call will return a Scaffold in JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="err">USD</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currencyConversionValue"</span><span class="p">,</span><span class="w"> </span><span class="err">VALUE</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p>This provides an endpoint for a developer to get a specific scaffold.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>openPublicKey</td>
+<td>This is the Developer&#39;s API key</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>contractAddress</td>
+<td>The Address that the Scaffold Smart contract has been deployed to</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='get-all-scaffolds'>Get all Scaffolds</h2>
+<blockquote>
+<p>An example of this call would be:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl http://openapp.io/api/scaffolds
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This call will return a list of Scaffolds in JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="err">USD</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currencyConversionValue"</span><span class="p">,</span><span class="w"> </span><span class="err">VALUE</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
+<p>This provides an endpoint for the developer to see all of the Scaffolds they own.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><code>GET http://openapp.io/api/scaffolds</code></p>
+<h2 id='storing-scaffold-data-off-chain'>Storing Scaffold Data Off-Chain</h2>
+<blockquote>
+<p>Below is a Scaffold off-chain representation in json.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"open_dev_id"</span><span class="p">:</span><span class="w"> </span><span class="err">OPEN_DEV_PUB_KEY</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="err">CONTRACT_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"abiData"</span><span class="p">:</span><span class="w"> </span><span class="err">ABI_CODE</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffold"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_DATA</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>There is a need to reference Scaffolds from off-chain components.
+This is done by incorporating the Scaffold Data into a larger off-chain object
+that can keep track of the contract code, and other necessary reference information.</p>
+<h1 id='connecting-to-an-application'>Connecting to an Application</h1>
+<p>Before connecting to an Application there are a
+few components to understand. These components are maintained
+in the off-chain OPEN library to ensure easy
+transitions and to provide built-in frameworks and functionality for the
+OPEN Community. For more information go to the OPEN Library.</p>
+<h3 id='server-side'>Server Side</h3>
+<p>The majority of the server side of OPEN deals primarily with accepting and verifying OPEN States,
+and by sending Product Data information via request. Examining the product information identifier
+in your application and making the corresponding change is left up to the developer.</p>
+<h3 id='client-side'>Client Side</h3>
+<p>Along with the product UI for the application,
+it is also necessary to have the necessary dependencies for the user to request
+product information and send transactions through the client side.</p>
+<h1 id='open-library'>OPEN Library</h1>
+<p>As the OPEN Platform grows we intend to devote more time
+and resources to making the platform as usable as possible.
+Along with dependencies like web3.js, the OPEN Library features
+Packages intended to make the transition as easy as possible.</p>
+<h2 id='packages'>Packages</h2>
+<ul>
+<li>Receipt</li>
+<li>Product</li>
+<li>Scaffold</li>
+<li>OPEN State</li>
+</ul>
+<h2 id='products'>Products</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="err">USD</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currencyConversionValue"</span><span class="p">,</span><span class="w"> </span><span class="err">VALUE</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>The OPEN States reference off-chain components, these are the Products.
+They detail pricing, descriptions, and other product information.</p>
+<h4 id='attributes'>Attributes</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Attribute</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>productID</td>
+<td>The unique product identifier.</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>The</td>
+</tr>
+<tr>
+<td>productPricing</td>
+<td>The price of the product.</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<h3 id='getting-a-product'>Getting a Product</h3>
+<p><code>GET &#39;http:// User Update (UID) (state) (signed transaction with address)</code></p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p><code>GET http://openapp.io/api/scaffolds</code>
+Sending information on product (pricing, ect) when requested by users</p>
+<h3 id='getting-a-list-of-products'>Getting a list of Products</h3>
+<p><code>GET http://openapp.io/api/scaffolds</code>
+<code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<h3 id='creating-a-product'>Creating a Product</h3>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<h3 id='updating-a-product'>Updating a Product</h3>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
+A Product can be easily updated to show that</p>
+<h2 id='transactions'>Transactions</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"signed_transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">SIGNED_INFORMATION</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Transactions are a class of</p>
+
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
+User is able to purchase by calling purchase (having the price loaded in-app)
+and setting the details of the product verification in-app ()
+Transaction must be sent to Scaffold with details in msg (and need and address)</p>
+
+<p><code>POST Scaffold (payment) (state)</code></p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userAddress</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>scaffoldAddress</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>productID</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>transactionArg</td>
+<td>filler</td>
+</tr>
+</tbody></table>
+<h2 id='receipts'>Receipts</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"signed_transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">SIGNED_INFORMATION</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A receipt specifies the transaction information, the user name,
+the OPEN State, and is signed by the address that performed the operation.
+It is an off-chain representation of the transaction and is used by the application
+for verification.</p>
+<h4 id='attributes-2'>Attributes</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userAddress</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>scaffoldAddress</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>transaction</td>
+<td>filler</td>
+</tr>
+<tr>
+<td>signed_transaction</td>
+<td>filler</td>
+</tr>
+</tbody></table>
+<h3 id='creating-a-receipt'>Creating a Receipt</h3>
+<blockquote>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+</blockquote>
+
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<h3 id='submitting-a-receipt'>Submitting a Receipt</h3>
+<blockquote>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+</blockquote>
+
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<h3 id='reading-a-receipt'>Reading a Receipt</h3>
+<blockquote>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
+Parsing receipts into specific categories</p>
+</blockquote>
+<h3 id='validating-a-receipt'>Validating a Receipt</h3>
+<blockquote>
+<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
+Checking on-chain dependencies
+Verify Its Signature</p>
+</blockquote>
+<h1 id='api-documentation-currently-in-development'>API Documentation Currently in Development</h1>
+<ul>
+<li>CRUD Operations with Scaffold</li>
+<li>CRUD Operations with Receipts</li>
+<li>CRUD Operations for Products</li>
+<li>CRUD Operations for OPEN State</li>
+</ul>
+<h1 id='errors'>Errors</h1>
+<p>The OPEN API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -445,7 +667,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
@@ -453,39 +675,19 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The request is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified Product could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a Scaffold with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
 <td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
