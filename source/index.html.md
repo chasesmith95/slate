@@ -9,7 +9,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -19,13 +18,39 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+This API documentation is meant to give OPEN Developers an endpoint how to develop and interact with the OPEN Platform.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+These documents specify how to get started with the OPEN Platform, how to create a Scaffold and pricing scheme, and how to integrating this pricing scheme into another application environment.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The point of the OPEN Platform is to make the transition as seamless as possible for the developer which means that many common pricing trends (product id, receipt) will persist.
+
+# Getting Started
+## Getting a Wallet
+An important part of accepting cryptocurrency payments is to get a Wallet and address.
+If you already have this feel free to skip this section.
+While the OPEN Wallet is still in development, it is recommended that you use a hardware solution like Trezor or Ledger Nano.
+In the context of this, it is possible to simply go through MetaMask.
+
+## Setting up a Developer Account
+Before interacting with the OPEN Platform, it is necessary to create an
+account on the OPEN Platform initially.
+This will create a Developer API Key through which it is
+possible to interact with the platform.
+
+The Developer API Key looks like the following:
+
+`Developer API Key: OPENPLATFORM`
+
+## Creating a Scaffold
+Once the Developer Account is created, Scaffolds and pricing schemes can be developed and deployed using the OPEN Scaffold Dashboard. This can be seen in more depth in the OPEN Demo.
+Installing Dependencies
+The OPEN API relies on several software dependencies, to ensure that the process is as easy and painless as possible.
 
 # Authentication
+Specific calls to the Scaffold require authentication from the developer.
+This is why there exists two OPEN API keys
+* Public Developer API Key (for testing purposes)
+* Private Developer API Key (for authentication and security purposes on deployment)
 
 > To authorize, use this code:
 
@@ -65,9 +90,86 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Connecting OPEN to an Application
 
-## Get All Kittens
+Before connecting to an Application there are a
+few components to understand. These components are maintained
+in the off-chain OPEN library to ensure easy
+transitions and to provide built-in frameworks and functionality for the
+OPEN Community. For more information go to the OPEN Library.
+
+## Receipts
+A receipt specifies the transaction information, the user name,
+the OPEN State, and is signed by the address that performed the operation.
+It is an off-chain representation of the transaction and is used by the application
+for verification.
+
+## Products
+The OPEN States reference off-chain components, these are the Products.
+They detail pricing, descriptions, and other product information.
+
+## Server Side
+The majority of the server side of OPEN deals primarily with accepting and verifying OPEN States, and by sending Product Data information via request. Examining the product information identifier in your application and making the corresponding change is left up to the developer.
+
+### Reading Receipts
+Parsing receipts into specific categories
+
+### Validating Receipts
+Checking on-chain dependencies
+Verify Its Signature
+
+### Responding to Product Requests
+Sending information on product (pricing, ect) when requested by users
+
+## User Side
+Along with the product UI for the application,
+it is also necessary to User has product UI.
+
+### Requesting list of Products
+
+### Requesting Product Information
+
+### Purchasing a Product
+User is able to purchase by calling purchase (having the price loaded in-app)
+and setting the details of the product verification in-app ()
+Transaction must be sent to Scaffold with details in msg (and need and address)
+
+POST Scaffold (payment) (state)
+
+Creating a Receipt
+POST User Update (UID) (state) (signed transaction with address)
+
+Sending a Receipt
+POST User Update (UID) (state) (signed transaction with address)
+
+# Interacting with Scaffolds
+The primary means of interacting with the Scaffolds is through
+the OPEN Developer Dashboard, it is also possible to make changes
+using the OPEN API.
+CRUD Operations with Scaffold
+GET Scaffold list
+CRUD Operations for Products in Scaffold Catalogue
+POST Scaffold State Catalogue (Operation)
+POST Scaffold Set Price (address, arg)
+
+# OPEN Library
+As the OPEN Platform grows we intend to devote more time
+and resources to making the platform as usable as possible.
+Along with dependencies like web3.js, the OPEN Library features
+Packages intended to make the transition as easy as possible.
+
+## Packages
+### Product
+#### Catalogue
+#### Product
+#### Unit (unique product identifier)
+### Receipt
+Receipt
+Receipt Operator
+Transaction
+Transaction
+Scaffold (off-chain representation)
+OPEN State (off-chain representation)
 
 ```ruby
 require 'kittn'
@@ -115,8 +217,6 @@ let kittens = api.kittens.get();
   }
 ]
 ```
-
-This endpoint retrieves all kittens.
 
 ### HTTP Request
 
@@ -236,4 +336,3 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
