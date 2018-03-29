@@ -61,17 +61,6 @@ This is why there exists two OPEN API keys
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('OPEN_DEV_PUB_KEY')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -79,11 +68,6 @@ curl "api_endpoint_here"
   -H "open_dev_id: OPEN_DEV_PUB_KEY"
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
 
 > Make sure to replace `OPEN_DEV_PUB_KEY` with your API key.
 
@@ -140,7 +124,7 @@ currencyConversionValue | The value in ETH of the desired currency.
 > An example of this call would be:
 
 ```shell
-curl http://openapp.io/api/scaffold/OPEN_DEV_PUB_KEY/0x0
+curl 'http://openapp.io/api/scaffold/OPEN_DEV_PUB_KEY/0x0'
 ```
 
 > This call will return a Scaffold in JSON:
@@ -175,7 +159,7 @@ contractAddress | The Address that the Scaffold Smart contract has been deployed
 > An example of this call would be:
 
 ```shell
-curl http://openapp.io/api/scaffolds
+curl 'http://openapp.io/api/scaffolds'
 ```
 
 > This call will return a list of Scaffolds in JSON:
@@ -245,7 +229,7 @@ Packages intended to make the transition as easy as possible.
 * Scaffold
 * OPEN State
 
-## Products
+# Products
 
 ```json
   {
@@ -261,7 +245,7 @@ Packages intended to make the transition as easy as possible.
 The OPEN States reference off-chain components, these are the Products.
 They detail pricing, descriptions, and other product information.
 
-#### Attributes
+### Attributes
 
 Attribute |  Description
 --------- |  -----------
@@ -270,20 +254,40 @@ productType | The
 productPricing | The price of the product.
 
 
-### Getting a Product
+## Getting a Product
+```shell
+curl 'http://openapp.io/api/product/:product_id'
+```
+
 `GET 'http:// User Update (UID) (state) (signed transaction with address)`
 
-`GET http://openapp.io/api/scaffolds`
-Sending information on product (pricing, ect) when requested by users
 
-### Getting a list of Products
+### HTTP Request
+
+`GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress`
+
+
+### Query Parameters
+
+Parameter |  Description
+--------- |  -----------
+openPublicKey | This is the Developer's API key
+contractAddress | The Address that the Scaffold Smart contract has been deployed to
+
+
+
+## Getting a list of Products
+
 `GET http://openapp.io/api/scaffolds`
 `POST User Update (UID) (state) (signed transaction with address)`
 
-### Creating a Product
+### HTTP Request
+`GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress`
+
+## Creating a Product
 `POST User Update (UID) (state) (signed transaction with address)`
 
-### Updating a Product
+## Updating a Product
 `POST User Update (UID) (state) (signed transaction with address)`
 A Product can be easily updated to show that
 
