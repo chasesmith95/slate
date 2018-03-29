@@ -293,7 +293,7 @@ Parameter |  Description
 contract_address | The address that the Scaffold has been published to
 
 
-## Transactions
+# Transactions
 
 ```json
   {
@@ -314,7 +314,7 @@ productID | Identifier of the product in question
 funds | Value sent in the transaction
 
 
-## Receipts
+# Receipts
 ```json
   {
   "userAddress": USER_ADDRESS,
