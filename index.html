@@ -517,11 +517,10 @@ Packages intended to make the transition as easy as possible.</p>
 <li>OPEN State</li>
 </ul>
 <h1 id='products'>Products</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="err">USD</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"currencyConversionValue"</span><span class="p">,</span><span class="w"> </span><span class="err">VALUE</span><span class="w">
+  </span><span class="s2">"productID"</span><span class="p">:</span><span class="w"> </span><span class="err">PRODUCT_ID</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"contractAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"productType"</span><span class="p">:</span><span class="w"> </span><span class="err">PRODUCT_AMOUNT</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"productPricing"</span><span class="p">:</span><span class="w"> </span><span class="err">PRICING_EXPRESSION</span><span class="w">
   </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -539,19 +538,23 @@ They detail pricing, descriptions, and other product information.</p>
 <td>The unique product identifier.</td>
 </tr>
 <tr>
+<td>contractAddress</td>
+<td>The address of the contract the Product is referenced in.</td>
+</tr>
+<tr>
 <td>productType</td>
-<td>The</td>
+<td>The type of product (consumable, subscription)</td>
 </tr>
 <tr>
 <td>productPricing</td>
 <td>The price of the product.</td>
 </tr>
 </tbody></table>
-<h2 id='getting-a-product'>Getting a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/product/:product_id'</span>
+<h2 id='getting-a-product'>Getting a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffold/:contract_address/product/:product_id'</span>
 </code></pre>
-<p><code>GET &#39;http:// User Update (UID) (state) (signed transaction with address)</code></p>
+<p>Get a specific product from a Scaffold</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress</code></p>
+<p><code>GET http://openapp.io/api/scaffold/:contract_address/product/:product_id</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -560,19 +563,31 @@ They detail pricing, descriptions, and other product information.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>openPublicKey</td>
-<td>This is the Developer&#39;s API key</td>
+<td>contract_address</td>
+<td>The address that the Scaffold has been published to</td>
 </tr>
 <tr>
-<td>contractAddress</td>
-<td>The Address that the Scaffold Smart contract has been deployed to</td>
+<td>product_id</td>
+<td>The unique identifier for the product</td>
 </tr>
 </tbody></table>
-<h2 id='getting-a-list-of-products'>Getting a list of Products</h2>
-<p><code>GET http://openapp.io/api/scaffolds</code>
-<code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<h2 id='getting-a-list-of-products'>Getting a list of Products</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffold/:contract_address/products'</span>
+</code></pre>
+<p>Get a list of products associated with a Scaffold.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress</code></p>
+<p><code>GET http://openapp.io/api/scaffold/:contract_address/products</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract_address</td>
+<td>The address that the Scaffold has been published to</td>
+</tr>
+</tbody></table>
 <h2 id='creating-a-product'>Creating a Product</h2>
 <p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
 <h2 id='updating-a-product'>Updating a Product</h2>
