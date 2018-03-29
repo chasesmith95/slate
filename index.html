@@ -290,12 +290,6 @@
                     <a href="#getting-a-list-of-products" class="toc-h2 toc-link" data-title="getting-a-list-of-products">Getting a list of Products</a>
                   </li>
                   <li>
-                    <a href="#creating-a-product" class="toc-h2 toc-link" data-title="creating-a-product">Creating a Product</a>
-                  </li>
-                  <li>
-                    <a href="#updating-a-product" class="toc-h2 toc-link" data-title="updating-a-product">Updating a Product</a>
-                  </li>
-                  <li>
                     <a href="#transactions" class="toc-h2 toc-link" data-title="transactions">Transactions</a>
                   </li>
                   <li>
@@ -588,26 +582,15 @@ They detail pricing, descriptions, and other product information.</p>
 <td>The address that the Scaffold has been published to</td>
 </tr>
 </tbody></table>
-<h2 id='creating-a-product'>Creating a Product</h2>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
-<h2 id='updating-a-product'>Updating a Product</h2>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
-A Product can be easily updated to show that</p>
 <h2 id='transactions'>Transactions</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"signed_transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">SIGNED_INFORMATION</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"funds"</span><span class="p">:</span><span class="w"> </span><span class="err">FUNDS</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Transactions are a class of</p>
-
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
-User is able to purchase by calling purchase (having the price loaded in-app)
-and setting the details of the product verification in-app ()
-Transaction must be sent to Scaffold with details in msg (and need and address)</p>
-
-<p><code>POST Scaffold (payment) (state)</code></p>
+<p>Transactions are an off-chain representation of on-chain transactions. They are used
+to pre-format the data that will be sent to the Scaffold.</p>
 
 <table><thead>
 <tr>
@@ -617,19 +600,19 @@ Transaction must be sent to Scaffold with details in msg (and need and address)<
 </thead><tbody>
 <tr>
 <td>userAddress</td>
-<td>filler</td>
+<td>Address of the sender of the funds.</td>
 </tr>
 <tr>
 <td>scaffoldAddress</td>
-<td>filler</td>
+<td>Address of the Scaffold being sent the transaction.</td>
 </tr>
 <tr>
 <td>productID</td>
-<td>filler</td>
+<td>Identifier of the product in question</td>
 </tr>
 <tr>
-<td>transactionArg</td>
-<td>filler</td>
+<td>funds</td>
+<td>Value sent in the transaction</td>
 </tr>
 </tbody></table>
 <h2 id='receipts'>Receipts</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
@@ -652,44 +635,29 @@ for verification.</p>
 </thead><tbody>
 <tr>
 <td>userAddress</td>
-<td>filler</td>
+<td>Address of the sender of the funds.</td>
 </tr>
 <tr>
 <td>scaffoldAddress</td>
-<td>filler</td>
+<td>Address of the Scaffold being sent the transaction.</td>
 </tr>
 <tr>
 <td>transaction</td>
-<td>filler</td>
+<td>The transaction data.</td>
 </tr>
 <tr>
-<td>signed_transaction</td>
-<td>filler</td>
+<td>signed_user_information</td>
+<td>The signed transaction.</td>
 </tr>
 </tbody></table>
 <h3 id='creating-a-receipt'>Creating a Receipt</h3>
-<blockquote>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
-</blockquote>
-
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<p>In Development</p>
 <h3 id='submitting-a-receipt'>Submitting a Receipt</h3>
-<blockquote>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
-</blockquote>
-
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
+<p>In Development</p>
 <h3 id='reading-a-receipt'>Reading a Receipt</h3>
-<blockquote>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
-Parsing receipts into specific categories</p>
-</blockquote>
+<p>In Development</p>
 <h3 id='validating-a-receipt'>Validating a Receipt</h3>
-<blockquote>
-<p><code>POST User Update (UID) (state) (signed transaction with address)</code>
-Checking on-chain dependencies
-Verify Its Signature</p>
-</blockquote>
+<p>In Development</p>
 <h1 id='api-documentation-currently-in-development'>API Documentation Currently in Development</h1>
 <ul>
 <li>CRUD Operations with Scaffold</li>
