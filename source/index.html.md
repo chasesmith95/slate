@@ -293,39 +293,25 @@ Parameter |  Description
 contract_address | The address that the Scaffold has been published to
 
 
-## Creating a Product
-`POST User Update (UID) (state) (signed transaction with address)`
-
-## Updating a Product
-`POST User Update (UID) (state) (signed transaction with address)`
-A Product can be easily updated to show that
-
 ## Transactions
 
 ```json
   {
   "userAddress": USER_ADDRESS,
   "scaffoldAddress": SCAFFOLD_ADDRESS,
-  "transaction": TRANSACTION_DATA,
-  "signed_transaction": SIGNED_INFORMATION
+  "product_id": TRANSACTION_DATA,
+  "funds": FUNDS
   }
 ```
-Transactions are a class of
-
-`POST User Update (UID) (state) (signed transaction with address)`
-User is able to purchase by calling purchase (having the price loaded in-app)
-and setting the details of the product verification in-app ()
-Transaction must be sent to Scaffold with details in msg (and need and address)
-
-`POST Scaffold (payment) (state)`
+Transactions are an off-chain representation of on-chain transactions. They are used
+to pre-format the data that will be sent to the Scaffold.
 
 Attribute |  Description
 --------- |  -----------
-userAddress | filler
-scaffoldAddress | filler
-productID | filler
-transactionArg | filler
-
+userAddress | Address of the sender of the funds.
+scaffoldAddress | Address of the Scaffold being sent the transaction.
+productID | Identifier of the product in question
+funds | Value sent in the transaction
 
 
 ## Receipts
@@ -346,31 +332,29 @@ for verification.
 
 Attribute |  Description
 --------- |  -----------
-userAddress | filler
-scaffoldAddress | filler
-transaction | filler
-signed_transaction | filler
+userAddress | Address of the sender of the funds.
+scaffoldAddress | Address of the Scaffold being sent the transaction.
+transaction | The transaction data.
+signed_user_information | The signed transaction.
+
 
 
 
 ### Creating a Receipt
-> `POST User Update (UID) (state) (signed transaction with address)`
 
-`POST User Update (UID) (state) (signed transaction with address)`
+In Development
 
 ### Submitting a Receipt
-> `POST User Update (UID) (state) (signed transaction with address)`
 
-`POST User Update (UID) (state) (signed transaction with address)`
+In Development
 
 ### Reading a Receipt
-> `POST User Update (UID) (state) (signed transaction with address)`
-Parsing receipts into specific categories
+
+In Development
 
 ### Validating a Receipt
-> `POST User Update (UID) (state) (signed transaction with address)`
-Checking on-chain dependencies
-Verify Its Signature
+
+In Development
 
 
 # API Documentation Currently in Development
