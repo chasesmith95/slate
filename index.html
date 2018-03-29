@@ -289,11 +289,25 @@
                   <li>
                     <a href="#getting-a-list-of-products" class="toc-h2 toc-link" data-title="getting-a-list-of-products">Getting a list of Products</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transactions" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
+          </li>
+          <li>
+            <a href="#receipts" class="toc-h1 toc-link" data-title="receipts">Receipts</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#transactions" class="toc-h2 toc-link" data-title="transactions">Transactions</a>
+                    <a href="#creating-a-receipt" class="toc-h2 toc-link" data-title="creating-a-receipt">Creating a Receipt</a>
                   </li>
                   <li>
-                    <a href="#receipts" class="toc-h2 toc-link" data-title="receipts">Receipts</a>
+                    <a href="#submitting-a-receipt" class="toc-h2 toc-link" data-title="submitting-a-receipt">Submitting a Receipt</a>
+                  </li>
+                  <li>
+                    <a href="#reading-a-receipt" class="toc-h2 toc-link" data-title="reading-a-receipt">Reading a Receipt</a>
+                  </li>
+                  <li>
+                    <a href="#validating-a-receipt" class="toc-h2 toc-link" data-title="validating-a-receipt">Validating a Receipt</a>
                   </li>
               </ul>
           </li>
@@ -582,7 +596,7 @@ They detail pricing, descriptions, and other product information.</p>
 <td>The address that the Scaffold has been published to</td>
 </tr>
 </tbody></table>
-<h2 id='transactions'>Transactions</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+<h1 id='transactions'>Transactions</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
@@ -615,7 +629,7 @@ to pre-format the data that will be sent to the Scaffold.</p>
 <td>Value sent in the transaction</td>
 </tr>
 </tbody></table>
-<h2 id='receipts'>Receipts</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+<h1 id='receipts'>Receipts</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
