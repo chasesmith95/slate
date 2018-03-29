@@ -275,8 +275,25 @@
                   <li>
                     <a href="#packages" class="toc-h2 toc-link" data-title="packages">Packages</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="products">Products</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#products" class="toc-h2 toc-link" data-title="products">Products</a>
+                    <a href="#attributes" class="toc-h2 toc-link" data-title="attributes">Attributes</a>
+                  </li>
+                  <li>
+                    <a href="#getting-a-product" class="toc-h2 toc-link" data-title="getting-a-product">Getting a Product</a>
+                  </li>
+                  <li>
+                    <a href="#getting-a-list-of-products" class="toc-h2 toc-link" data-title="getting-a-list-of-products">Getting a list of Products</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-product" class="toc-h2 toc-link" data-title="creating-a-product">Creating a Product</a>
+                  </li>
+                  <li>
+                    <a href="#updating-a-product" class="toc-h2 toc-link" data-title="updating-a-product">Updating a Product</a>
                   </li>
                   <li>
                     <a href="#transactions" class="toc-h2 toc-link" data-title="transactions">Transactions</a>
@@ -334,18 +351,9 @@ This is why there exists two OPEN API keys
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'OPEN_DEV_PUB_KEY'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
   -H <span class="s2">"open_dev_id: OPEN_DEV_PUB_KEY"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>OPEN_DEV_PUB_KEY</code> with your API key.</p>
@@ -411,7 +419,7 @@ using the OPEN API.</p>
 <blockquote>
 <p>An example of this call would be:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl http://openapp.io/api/scaffold/OPEN_DEV_PUB_KEY/0x0
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffold/OPEN_DEV_PUB_KEY/0x0'</span>
 </code></pre>
 <blockquote>
 <p>This call will return a Scaffold in JSON:</p>
@@ -448,7 +456,7 @@ using the OPEN API.</p>
 <blockquote>
 <p>An example of this call would be:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl http://openapp.io/api/scaffolds
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffolds'</span>
 </code></pre>
 <blockquote>
 <p>This call will return a list of Scaffolds in JSON:</p>
@@ -508,7 +516,7 @@ Packages intended to make the transition as easy as possible.</p>
 <li>Scaffold</li>
 <li>OPEN State</li>
 </ul>
-<h2 id='products'>Products</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+<h1 id='products'>Products</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="s2">"developerAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">DEV_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"scaffoldDescription"</span><span class="p">:</span><span class="w"> </span><span class="err">DESCRIPTION</span><span class="p">,</span><span class="w">
   </span><span class="s2">"fiatAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">AMOUNT</span><span class="p">,</span><span class="w">
@@ -519,7 +527,7 @@ Packages intended to make the transition as easy as possible.</p>
 </span></code></pre>
 <p>The OPEN States reference off-chain components, these are the Products.
 They detail pricing, descriptions, and other product information.</p>
-<h4 id='attributes'>Attributes</h4>
+<h3 id='attributes'>Attributes</h3>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -539,17 +547,35 @@ They detail pricing, descriptions, and other product information.</p>
 <td>The price of the product.</td>
 </tr>
 </tbody></table>
-<h3 id='getting-a-product'>Getting a Product</h3>
+<h2 id='getting-a-product'>Getting a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/product/:product_id'</span>
+</code></pre>
 <p><code>GET &#39;http:// User Update (UID) (state) (signed transaction with address)</code></p>
-
-<p><code>GET http://openapp.io/api/scaffolds</code>
-Sending information on product (pricing, ect) when requested by users</p>
-<h3 id='getting-a-list-of-products'>Getting a list of Products</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>openPublicKey</td>
+<td>This is the Developer&#39;s API key</td>
+</tr>
+<tr>
+<td>contractAddress</td>
+<td>The Address that the Scaffold Smart contract has been deployed to</td>
+</tr>
+</tbody></table>
+<h2 id='getting-a-list-of-products'>Getting a list of Products</h2>
 <p><code>GET http://openapp.io/api/scaffolds</code>
 <code>POST User Update (UID) (state) (signed transaction with address)</code></p>
-<h3 id='creating-a-product'>Creating a Product</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress</code></p>
+<h2 id='creating-a-product'>Creating a Product</h2>
 <p><code>POST User Update (UID) (state) (signed transaction with address)</code></p>
-<h3 id='updating-a-product'>Updating a Product</h3>
+<h2 id='updating-a-product'>Updating a Product</h2>
 <p><code>POST User Update (UID) (state) (signed transaction with address)</code>
 A Product can be easily updated to show that</p>
 <h2 id='transactions'>Transactions</h2><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
