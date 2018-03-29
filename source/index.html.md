@@ -233,11 +233,10 @@ Packages intended to make the transition as easy as possible.
 
 ```json
   {
-  "developerAddress": DEV_ADDRESS,
-  "scaffoldDescription": DESCRIPTION,
-  "fiatAmount": AMOUNT,
-  "conversionCurrency": USD,
-  "currencyConversionValue", VALUE
+  "productID": PRODUCT_ID,
+  "contractAddress": SCAFFOLD_ADDRESS,
+  "productType": PRODUCT_AMOUNT,
+  "productPricing": PRICING_EXPRESSION
   }
 
 ```
@@ -250,39 +249,49 @@ They detail pricing, descriptions, and other product information.
 Attribute |  Description
 --------- |  -----------
 productID | The unique product identifier.
-productType | The
+contractAddress | The address of the contract the Product is referenced in.
+productType | The type of product (consumable, subscription)
 productPricing | The price of the product.
 
 
 ## Getting a Product
 ```shell
-curl 'http://openapp.io/api/product/:product_id'
+curl 'http://openapp.io/api/scaffold/:contract_address/product/:product_id'
 ```
 
-`GET 'http:// User Update (UID) (state) (signed transaction with address)`
+Get a specific product from a Scaffold
 
 
 ### HTTP Request
 
-`GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress`
+`GET http://openapp.io/api/scaffold/:contract_address/product/:product_id`
 
 
 ### Query Parameters
 
 Parameter |  Description
 --------- |  -----------
-openPublicKey | This is the Developer's API key
-contractAddress | The Address that the Scaffold Smart contract has been deployed to
-
+contract_address | The address that the Scaffold has been published to
+product_id | The unique identifier for the product
 
 
 ## Getting a list of Products
+```shell
+curl 'http://openapp.io/api/scaffold/:contract_address/products'
+```
 
-`GET http://openapp.io/api/scaffolds`
-`POST User Update (UID) (state) (signed transaction with address)`
+
+Get a list of products associated with a Scaffold.
 
 ### HTTP Request
-`GET http://openapp.io/api/scaffold/:openPublicKey/:contractAddress`
+`GET http://openapp.io/api/scaffold/:contract_address/products`
+
+### Query Parameters
+
+Parameter |  Description
+--------- |  -----------
+contract_address | The address that the Scaffold has been published to
+
 
 ## Creating a Product
 `POST User Update (UID) (state) (signed transaction with address)`
