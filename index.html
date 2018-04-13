@@ -234,6 +234,9 @@
                     <a href="#setting-up-a-developer-account" class="toc-h2 toc-link" data-title="setting-up-a-developer-account">Setting up a Developer Account</a>
                   </li>
                   <li>
+                    <a href="#open-platform-api" class="toc-h2 toc-link" data-title="open-platform-api">OPEN Platform API</a>
+                  </li>
+                  <li>
                     <a href="#creating-a-scaffold" class="toc-h2 toc-link" data-title="creating-a-scaffold">Creating a Scaffold</a>
                   </li>
               </ul>
@@ -252,6 +255,9 @@
                   </li>
                   <li>
                     <a href="#get-all-scaffolds" class="toc-h2 toc-link" data-title="get-all-scaffolds">Get all Scaffolds</a>
+                  </li>
+                  <li>
+                    <a href="#get-multiple-scaffolds" class="toc-h2 toc-link" data-title="get-multiple-scaffolds">Get Multiple Scaffolds</a>
                   </li>
                   <li>
                     <a href="#storing-scaffold-data-off-chain" class="toc-h2 toc-link" data-title="storing-scaffold-data-off-chain">Storing Scaffold Data Off-Chain</a>
@@ -292,7 +298,7 @@
               </ul>
           </li>
           <li>
-            <a href="#transactions" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
+            <a href="#transactions-2" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
           </li>
           <li>
             <a href="#receipts" class="toc-h1 toc-link" data-title="receipts">Receipts</a>
@@ -319,7 +325,7 @@
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://openplatform.typeform.com/to/HOeQow'>Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -335,7 +341,7 @@
 <p>An important part of accepting cryptocurrency payments is to get a Wallet and address.
 If you already have this feel free to skip this section.
 While the OPEN Wallet is still in development, it is recommended that you use a hardware solution like Trezor or Ledger Nano.
-In the context of this, it is possible to simply go through MetaMask.</p>
+In the context of this, it is possible to simply go through <a href= 'https://metamask.io/' target='_blank'>MetaMask</a>.</p>
 <h2 id='setting-up-a-developer-account'>Setting up a Developer Account</h2>
 <p>Before interacting with the OPEN Platform, it is necessary to create an
 account on the OPEN Platform initially.
@@ -345,7 +351,11 @@ possible to interact with the platform.</p>
 <p>The Developer API Key looks like the following:</p>
 
 <p><code>Developer API Key: OPEN_DEV_PUB_KEY</code></p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s1">'/api/gen-developer-api-key'</span>
+<h2 id='open-platform-api'>OPEN Platform API</h2><h3 id='developer-api-key'>Developer API Key</h3>
+<p><code>
+GET /api/open_public_key
+</code></p>
+<h3 id='scaffolds-on-chain'>Scaffolds - on-chain</h3><pre class="highlight shell tab-shell"><code>curl <span class="s1">'/api/gen-developer-api-key'</span>
 </code></pre><h2 id='creating-a-scaffold'>Creating a Scaffold</h2>
 <p>Once the Developer Account is created, Scaffolds and pricing schemes can be developed and deployed using the OPEN Scaffold Dashboard. This can be seen in more depth in the OPEN Demo.
 Installing Dependencies
@@ -483,6 +493,44 @@ using the OPEN API.</p>
 <p>This provides an endpoint for the developer to see all of the Scaffolds they own.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://openapp.io/api/scaffolds</code></p>
+<h2 id='get-multiple-scaffolds'>Get Multiple Scaffolds</h2>
+<p>This gets the a set scaffolds belonging to an open open developer key.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p>&#39;GET /api/scaffolds/{open_dev_key}?scaffolds=[scaffold_adress_1,scaffold_adress_2,scaffold_adress_3]&#39;</p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>openPublicKey</td>
+<td>This is the Developer&#39;s API key</td>
+</tr>
+<tr>
+<td>contractAddresses</td>
+<td>The Addresses that the Scaffold Smart contracts have been deployed to</td>
+</tr>
+</tbody></table>
+<h4 id='summary'>Summary</h4>
+<p><code>
+GET /api/on_chain_summary/{scaffold_address}
+</code></p>
+<h4 id='balance'>Balance</h4>
+<p>&#39;GET /api/on_chain_balance/{scaffold_address}&#39;</p>
+<h4 id='transactions'>Transactions</h4>
+<p>This provides an endpoint for the developer to get the number of transactions that have happened in a scaffold.</p>
+
+<p>&#39;GET /api/on_chain_transactions/{scaffold_address}&#39;</p>
+<h4 id='transaction-ids'>Transaction IDs</h4>
+<p>This can be used as a verification of payment</p>
+
+<p>&#39;GET /api/on_chain_trasaction/{scaffold_address}/{transaction_id}&#39;</p>
+<h4 id='update-price'>Update Price</h4>
+<p>&#39;POST /api/update_scaffold_price&#39;</p>
+
+<p>This is not currently built into the scaffold, but it could easily be added</p>
 <h2 id='storing-scaffold-data-off-chain'>Storing Scaffold Data Off-Chain</h2>
 <blockquote>
 <p>Below is a Scaffold off-chain representation in json.</p>
@@ -561,9 +609,9 @@ They detail pricing, descriptions, and other product information.</p>
 <h2 id='getting-a-product'>Getting a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffold/:contract_address/product/:product_id'</span>
 </code></pre>
 <p>Get a specific product from a Scaffold</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://openapp.io/api/scaffold/:contract_address/product/:product_id</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -582,9 +630,9 @@ They detail pricing, descriptions, and other product information.</p>
 <h2 id='getting-a-list-of-products'>Getting a list of Products</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'http://openapp.io/api/scaffold/:contract_address/products'</span>
 </code></pre>
 <p>Get a list of products associated with a Scaffold.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://openapp.io/api/scaffold/:contract_address/products</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -596,7 +644,7 @@ They detail pricing, descriptions, and other product information.</p>
 <td>The address that the Scaffold has been published to</td>
 </tr>
 </tbody></table>
-<h1 id='transactions'>Transactions</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+<h1 id='transactions-2'>Transactions</h1><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="s2">"userAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">USER_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"scaffoldAddress"</span><span class="p">:</span><span class="w"> </span><span class="err">SCAFFOLD_ADDRESS</span><span class="p">,</span><span class="w">
   </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="err">TRANSACTION_DATA</span><span class="p">,</span><span class="w">
